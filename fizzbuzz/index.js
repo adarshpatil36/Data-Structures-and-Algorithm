@@ -11,7 +11,22 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(no) {
+  for (n = 1; n <= no; n++) {
+    console.log(
+      n % 3 === 0 && n % 5 === 0
+        ? "fizzbuzz"
+        : n % 3 === 0
+        ? "fizz"
+        : n % 5 === 0
+        ? "buzz"
+        : n
+    );
+  }
+  return;
+}
+
+/*** Trick : 0%3 ===0 so for loop should begin with 1 and should be equal to n */
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
