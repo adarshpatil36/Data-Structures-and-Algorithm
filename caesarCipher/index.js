@@ -8,7 +8,18 @@
 // caeserCipher("abcd", 100) === "wxyz";
 // caeserCipher("gurer ner 9 qbtf!", 13) === "there are 9 dogs!"
 
-function caesarCipher(str, shift) {}
+function caesarCipher(str, shift) {
+  let res = "";
+  for (i = 0; i < str.length; i++) {
+    let charId = str[i].charCodeAt() + shift;
+    while (charId > 122) {
+      charId = (charId % 122) + 96;
+    }
+    res += String.fromCharCode(charId);
+  }
+  return res;
+}
+/** Difficult practice well */
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
