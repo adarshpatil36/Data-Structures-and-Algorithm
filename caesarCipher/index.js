@@ -11,11 +11,8 @@
 function caesarCipher(str, shift) {
   let res = "";
   for (i = 0; i < str.length; i++) {
-    let charId = str[i].charCodeAt() + shift;
-    while (charId > 122) {
-      charId = (charId % 122) + 96;
-    }
-    res += String.fromCharCode(charId);
+    let charId = (str[i].charCodeAt() - 97 + shift) % 26;
+    res += String.fromCharCode(charId + 97);
   }
   return res;
 }
