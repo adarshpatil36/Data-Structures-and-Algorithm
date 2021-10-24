@@ -16,10 +16,22 @@
 //       '### '
 //       '####'
 
+// function steps(n) {
+//   for (i = 0; i < n; i++) {
+//     let step = "";
+//     for (j = 0; j <= i; j++) {
+//       step += "#";
+//     }
+//     for (k = i + 1; k < n; k++) {
+//       step += " ";
+//     }
+//     return step;
+//   }
+// }
+
 function steps(n) {
   for (i = 1; i <= n; i++) {
-    let res = "";
-    res += "#".repeat(i);
+    res = "#".repeat(i);
     res += " ".repeat(n - i);
     console.log(res);
   }

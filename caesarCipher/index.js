@@ -8,15 +8,21 @@
 // caeserCipher("abcd", 100) === "wxyz";
 // caeserCipher("gurer ner 9 qbtf!", 13) === "there are 9 dogs!"
 
-function caesarCipher(str, shift) {
-  let res = "";
-  for (i = 0; i < str.length; i++) {
-    let charId = (str[i].charCodeAt() - 97 + shift) % 26;
-    res += String.fromCharCode(charId + 97);
-  }
-  return res;
-}
 /** Difficult practice well */
+
+function caesarCipher(str, shft) {
+  let newStr = "";
+  for (i = 0; i < str.length; i++) {
+    if (str[i].toLowerCase() != str[i].toUpperCase()) {
+      newStr += String.fromCharCode(
+        ((str[i].charCodeAt() - 97 + shft) % 26) + 97
+      );
+    } else {
+      newStr += str[i];
+    }
+  }
+  return newStr;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
