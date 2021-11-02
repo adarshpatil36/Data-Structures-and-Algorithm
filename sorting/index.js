@@ -1,11 +1,33 @@
 // Implement a swap helper function that we will use in both BS and SS
-function swap(arr, i, j) {}
+function swap(arr, i, j) {
+  [arr[i], arr[j]] = [arr[j], arr[i]];
+}
 
 //bubbleSort works by having sorted data accumulate at end of array
-function bubbleSort(arr) {}
+function bubbleSort(arr) {
+  for (j = 0; j < arr.length; j++) {
+    for (i = 0; i < arr.length - j; i++) {
+      if (arr[i] > arr[i + 1]) {
+        swap(arr, i, i + 1);
+      }
+    }
+  }
+  return arr;
+}
 
 //selectionSort works by having sorted data accumulate at start of array
-function selectionSort(arr) {}
+function selectionSort(arr) {
+  for (i = 0; i < arr.length - 1; i++) {
+    let swapIndex = i;
+    for (j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[swapIndex]) {
+        swapIndex = j;
+      }
+    }
+    swap(arr, i, swapIndex);
+  }
+  return arr;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
